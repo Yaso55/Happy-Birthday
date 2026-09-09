@@ -1,3 +1,5 @@
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 /**
  * ─────────────────────────────────────────────────────────────
  *  EDIT EVERYTHING HERE.
@@ -14,7 +16,7 @@ export const person = {
   specialSkill: "Turning Dreams Into Reality",
   era: "The Best One Yet",
   /** Optional: put an image in src/assets and import it, or use a URL. */
-  photo: "/profile.jpg",
+  photo: asset("profile.jpg"),
 };
 
 export const intro = {
@@ -99,61 +101,61 @@ export const tracks = [
     no: "1",
     title: "Two Fools",
     duration: "2:22",
-    audioSrc: "/audio/track-01-new.mp3",
+    audioSrc: asset("audio/track-01-new.mp3"),
     message: "I wish you new dreams to find, new things to look forward to, and new reasons to believe that there is still so much waiting for you beyond everything you can imagine today.",
   },
   {
     no: "2",
     title: "Stuck",
     duration: "2:32",
-    audioSrc: "/audio/track-02.mp3",
+    audioSrc: asset("audio/track-02.mp3"),
     message: "I wish you a kind of happiness that feels peaceful, genuine, and lasting the kind that finds you even in ordinary days and makes you smile without needing a reason.",
   },
   {
     no: "3",
     title: "Bloody Paradise",
     duration: "2:11",
-    audioSrc: "/audio/track-03.mp3",
+    audioSrc: asset("audio/track-03.mp3"),
     message: "I wish the days ahead bring you countless beautiful memories, little moments you’ll remember years from now, and people who make those moments even more special.",
   },
   {
     no: "4",
     title: "Checkmate",
     duration: "2:23",
-    audioSrc: "/audio/track-04.mp3",
+    audioSrc: asset("audio/track-04.mp3"),
     message: "I wish life gives you everything you deserve not only the achievements you work for, but also the love, kindness, peace, success, and beautiful surprises you may not even know you’re waiting for.",
   },
   {
     no: "5",
     title: "Highlight",
     duration: "3:13",
-    audioSrc: "/audio/track-05.mp3",
+    audioSrc: asset("audio/track-05.mp3"),
     message: "I wish that whenever life feels heavy, you always find the strength to keep going, the courage to believe in yourself again, and someone or something that reminds you that difficult days never last forever.",
   },
   {
     no: "6",
     title: "Bad For You",
     duration: "3:15",
-    audioSrc: "/audio/track-06.mp3",
+    audioSrc: asset("audio/track-06.mp3"),
     message: "And my final wish is simply this: I hope that one day, you look back at this version of yourself and realize that everything was worth it that you became the person you always hoped you could be, that your dreams found their way to you, and that somewhere along the way, you were truly, deeply happy.",
   },
   {
     no: "Special Track",
     title: "Brand New Start",
     duration: "4:37",
-    audioSrc: "/audio/brand-new-start.wav",
+    audioSrc: asset("audio/brand-new-start.wav"),
     message: "Gift From Yaso Music",
   },
 ];
 
 /** Add your own photos: import them from src/assets and set `src`. */
 export const memories: { caption: string; date: string; src?: string }[] = [
-  { caption: "", date: "", src: "/memory-01.jpg" },
-  { caption: "", date: "", src: "/memory-02.jpg" },
-  { caption: "", date: "", src: "/memory-03.jpg" },
-  { caption: "", date: "", src: "/memory-04.jpg" },
-  { caption: "", date: "", src: "/memory-05.jpg" },
-  { caption: "", date: "", src: "/memory-06.jpg" },
+  { caption: "", date: "", src: asset("memory-01.jpg") },
+  { caption: "", date: "", src: asset("memory-02.jpg") },
+  { caption: "", date: "", src: asset("memory-03.jpg") },
+  { caption: "", date: "", src: asset("memory-04.jpg") },
+  { caption: "", date: "", src: asset("memory-05.jpg") },
+  { caption: "", date: "", src: asset("memory-06.jpg") },
 ];
 
 export const reminders = [
