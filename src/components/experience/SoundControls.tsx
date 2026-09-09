@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { audio } from "@/content/site";
 
 /**
@@ -46,20 +46,26 @@ export function SoundControls({
   const ref = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
-  useEffect(() => {
+  const toggleMusic = () => {
     const el = ref.current;
     if (!el) return;
-    if (playing) void el.play().catch(() => setPlaying(false));
-    else el.pause();
-  }, [playing]);
+
+    if (playing) {
+      el.pause();
+      setPlaying(false);
+      return;
+    }
+
+    void el.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+  };
 
   return (
     <div className="glass-soft fixed bottom-5 left-5 z-40 flex items-center gap-2 rounded-full px-3 py-2">
       {audio.src ? (
         <>
-          <audio ref={ref} src={audio.src} loop preload="none" />
+          <audio ref={ref} src={audio.src} loop preload="metadata" />
           <button
-            onClick={() => setPlaying((p) => !p)}
+            onClick={toggleMusic}
             aria-label={playing ? "Pause music" : "Play music"}
             className="font-mono text-[0.58rem] uppercase tracking-widest text-silver transition-opacity hover:opacity-70"
           >
