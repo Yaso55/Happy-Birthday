@@ -45,7 +45,7 @@ const markers: Marker[] = [
   { id: "final", label: "FINAL TRACK" },
 ];
 
-function Index() {
+export function Index() {
   const [entered, setEntered] = useState(false);
   const [active, setActive] = useState<string>("chapter-01");
   const sound = useSound();
