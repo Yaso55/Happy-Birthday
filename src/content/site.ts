@@ -186,7 +186,7 @@ export const easterEgg = {
  * Leave empty to keep the player silent — nothing ever autoplays.
  */
 export const audio = {
-  src: "/audio/moonstruck.mp3", // path to your file
+  src: asset("audio/moonstruck.mp3"), // path to your file
   label: "Moonstruck", // name shown in the player
 };
 
