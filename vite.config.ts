@@ -4,18 +4,24 @@
 //     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
+import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const externalSitePath = "E:/New Web/site.ts";
+
 export default defineConfig({
   vite: {
+    base: process.env.GITHUB_ACTIONS ? "/Happy-Birthday/" : "/",
     resolve: {
-      alias: [
-        {
-          find: /^@\/content\/site$/,
-          replacement: resolve("E:/New Web/site.ts"),
-        },
-      ],
+      alias: existsSync(externalSitePath)
+        ? [
+            {
+              find: /^@\/content\/site$/,
+              replacement: resolve(externalSitePath),
+            },
+          ]
+        : [],
     },
     server: {
       fs: {
