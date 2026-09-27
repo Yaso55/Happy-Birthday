@@ -95,7 +95,7 @@ export function Index() {
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
         >
           <ProgressRail markers={markers} active={active} />
-          <SoundControls enabled={sound.enabled} onToggle={sound.setEnabled} />
+          <SoundControls enabled={sound.enabled} onToggle={sound.setEnabled} visible={entered} />
 
           {/* CHAPTER 01 */}
           <Chapter

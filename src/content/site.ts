@@ -186,7 +186,8 @@ export const easterEgg = {
  * Leave empty to keep the player silent — nothing ever autoplays.
  */
 export const audio = {
-  src: asset("audio/moonstruck.mp3"), // path to your file
-  label: "Moonstruck", // name shown in the player
+  src: asset("audio/moonstruck.mp3"),
+  sources: [asset("audio/moonstruck.mp3"), asset("audio/ENHYPEN - Highway 1009 [320 kbps].mp3")],
+  labels: ["Moonstruck", "Highway 1009"],
 };
 
